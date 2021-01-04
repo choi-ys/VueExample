@@ -9,19 +9,14 @@ import {fetchAskList} from '../api/index.js'
 
 export default {
   data(){
-    return {
+    return{
       askList : []
     }
   },
   created(){
-    var vm = this;
     fetchAskList()
-      .then(function(response){
-        vm.askList = response.data;
-      })
-      .then(function(error){
-        console.log(error);
-      })
+      .then(response => this.askList = response.data)
+      .then(error => console.log(error))
   }
 }
 </script>

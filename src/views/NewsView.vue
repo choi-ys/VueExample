@@ -8,21 +8,15 @@
 import { fetchNewsList } from '../api/index.js'
 
 export default {
-  data() {
-    return {
+  data(){
+    return{
       newsList: []
     }
   },
-  created() {
-    var vm = this;
+  created(){
     fetchNewsList()
-      .then(function(response){
-        console.log(response);
-        vm.newsList = response.data;
-      })
-      .catch(function (error){
-        console.log(error);
-      })
+      .then(response => this.newsList = response.data)
+      .catch(error => console.log(error))
   }
 }
 </script>
