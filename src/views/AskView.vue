@@ -1,6 +1,9 @@
 <template>
   <div>
-      <div v-for="ask in fetchedAskList"> {{ ask.title }}</div>
+    <p v-for="ask in fetchedAskList"> 
+      <a v-bind:href="ask.url">{{ ask.title }}</a>
+      <small>{{ ask.time_ago }} {{ ask.user }}</small>
+    </p>
   </div>
 </template>
 
