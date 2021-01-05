@@ -2,7 +2,10 @@
   <div>
     <p v-for="news in fetchedNewsList"> 
       <a v-bind:href="news.url">{{ news.title }}</a>
-      <small>{{ news.time_ago }} {{ news.user }}</small>
+      <small>
+        {{ news.time_ago }}
+        <router-link :to="`/user/${news.user}`">{{ news.user }}</router-link>
+      </small>
     </p>
   </div>
 </template>

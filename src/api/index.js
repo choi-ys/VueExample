@@ -18,9 +18,14 @@ function fetchAskList(){
     return axios.get(`${config.baseUrl}ask/1.json`)
 }
 
+function fetchUserInfo(username){
+  return axios.get(`${config.baseUrl}user/${username}.json`)
+}
+
 // [#3] 함수로 정의한 API 통신 부를 components에서 import 할 수 있도록 export
 export{
     fetchNewsList,
     fetchJobsList,
-    fetchAskList
+    fetchAskList,
+    fetchUserInfo,
 }
