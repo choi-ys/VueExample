@@ -1,15 +1,15 @@
 <template>
   <div>
-      <div v-for="ask in askList"> {{ ask.title }}</div>
+      <div v-for="ask in fetchedAskList"> {{ ask.title }}</div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   computed:{
-    ...mapState({
-      askList: state => state.askList
+    ...mapGetters({
+      fetchedAskList : 'fetchedAskList'
     })
   },
   created(){

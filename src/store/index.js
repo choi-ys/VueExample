@@ -12,6 +12,17 @@ export const store = new Vuex.Store({
     askList : [],
     jobList : [],
   },
+  getters:{
+    fetchedNewsList(state){
+      return state.newsList;
+    },
+    fetchedAskList(state){
+      return state.askList;
+    },
+    fetchedJobList(state){
+      return state.jobList;
+    },
+  },
   mutations: {
     SET_NEWS(state, data){
       state.newsList = data;
@@ -21,7 +32,7 @@ export const store = new Vuex.Store({
     },
     SET_JOBS(state, data){
       state.jobList = data;
-    }
+    },
   },
   actions: {
     FECTH_NEWS(context){
