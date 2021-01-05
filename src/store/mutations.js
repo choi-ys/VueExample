@@ -10,5 +10,8 @@ export default{
   },
   SET_USER(state, data){
     state.userInfo = data;
-  }
+  },
+  SET_ITEM(state, data){
+    state.itemInfo = data;
+  },
 }
