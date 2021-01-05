@@ -1,15 +1,15 @@
 <template>
   <div>
-      <div v-for="news in newsList"> {{ news.title }}</div>
+      <div v-for="news in fetchedNewsList"> {{ news.title }}</div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   computed:{
-    ...mapState({
-      newsList: state => state.newsList
+    ...mapGetters({
+      fetchedNewsList : 'fetchedNewsList'
     })
   },
   created(){
